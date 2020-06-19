@@ -1,0 +1,7 @@
+/* pages/Detailspage/Detailspage.wxss */
+.header{
+  font-size: 16px;
+}
+.songsheet{
+  /* background-color: ; */
+}

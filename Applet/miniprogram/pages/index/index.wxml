@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="box">
+    <input placeholder="搜索歌曲" placeholder-class="place-holder"></input>
+    <image src="../../images/sousuo.png"></image>
+  </view>
+  <view class="List" >
+    <view wx:for="{{datalist}}" data-item="item" wx:for-index="idx" wx:key="idx"  wx:if="{{idx<4}}" class="list_box" bindtap="btn" data-id='{{item.id}}'>
+      <view class="img">
+        <image src="{{item.coverImgUrl}}"></image>
+        <text class="img_text">
+          {{item.updateFrequency}}
+        </text>
+      </view>
+      <view class="list">
+        <view wx:for="{{item.tracks}}"  wx:for-index="index" wx:key="index" class="list_txt">
+           <text class="list_font" >{{index+1}}.{{item.first +'-'+ item.second}}</text>  
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

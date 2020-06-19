@@ -1,0 +1,7 @@
+<!--pages/Detailspage/Detailspage.wxml-->
+<view class="songsheet">
+  <text class="header">歌单</text>
+  <view>
+
+  </view>
+</view>
