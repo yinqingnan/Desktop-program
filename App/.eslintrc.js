@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     'html'
   ],
-  'rules': {
+  rules: {
     //允许无括号箭头功能
     'arrow-parens': 0,
     // allow async-await

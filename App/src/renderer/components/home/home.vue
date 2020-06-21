@@ -31,7 +31,7 @@
             </el-main>
           </el-container>
           <el-footer>
-            <Footer :url="url"></Footer>
+            <Footer :music="music"></Footer>
           </el-footer>
         </el-container>
         </div>
@@ -51,7 +51,13 @@ export default {
   data () {
     return {
       user_msg: {},
-      url: 'http://m7.music.126.net/20200619164538/669b679a418b21037daa9b77c68ea01f/ymusic/0fd6/4f65/43ed/a8772889f38dfcb91c04da915b301617.mp3'
+      music: {
+        title: '游园会',
+        author: '周杰伦',
+        pic: '',
+        url: 'http://m801.music.126.net/20200621223040/239c553a5aa22815c75c6deec51d3c84/jdymusic/obj/w5zDlMODwrDDiGjCn8Ky/2041626782/eaf0/d6fe/b76a/9f2e4df64d86fa5d797fd38152cb4dcb.mp3',
+        lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
+      }
     }
   },
   methods: {

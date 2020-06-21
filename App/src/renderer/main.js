@@ -10,9 +10,10 @@ import './assets/font/iconfont.css'
 // import 'nprogress/nprogress.css'
 import './style/moren.css' // 清除css默认样式文件
 import './mock/index.js' // 本地数据mock文件
+import vueAplayer from 'vue-aplayer'
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 axios.defaults.baseURL = 'http://localhost:3000/'
-
+Vue.use(vueAplayer)
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 Vue.use(ElementUI)

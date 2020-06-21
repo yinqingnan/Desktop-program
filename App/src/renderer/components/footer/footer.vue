@@ -2,26 +2,39 @@
     <div>
         <!-- <audio :src="url"></audio> -->
         <div class="box">
-            <span><span class="iconfont icon-shangyiqu"></span></span>
-            <span class="iconfont icon-xihuan"></span>
-            <span><span class="iconfont icon-xiayiqu"></span></span>
+            <aplayer :music="music"></aplayer>
         </div>
     </div>
 </template>
 <script>
+import aplayer from 'vue-aplayer'
 export default {
-  props: ['url']
+  components: {
+    aplayer
+  },
+  props: ['music']
 }
 </script>
 <style scoped>
 .box{
-    width: 200px;
+    /* width: 200px; */
     display: flex;
     justify-content: center;
 }  
-.box>span{
-    width: 32px;
-    height: 32px;
+.box>div{
+    width: 100%;
+    height: 48px;
+    margin: 0 6px;
     
+}
+
+</style>
+<style>
+.aplayer .aplayer-body .aplayer-info{
+    height:45px !important;
+}
+.aplayer-pic{
+    width: 45px !important;
+    height: 45px !important;
 }
 </style>
