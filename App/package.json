@@ -24,7 +24,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "my-proj",
+    "productName": "仿网易音乐",
     "appId": "com.example.yourapp",
     "directories": {
       "output": "build"

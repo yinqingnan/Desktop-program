@@ -1,7 +1,7 @@
 <template>
     <div class="box" >
         <!--style="-webkit-app-region:drag"    //让窗体可以进行拖动  -->
-        <div class="drags" style="-webkit-app-region:drag">
+        <div class="drags" style="-webkit-app-region:drag;">
 
         </div>
         <div>
@@ -27,7 +27,8 @@
                             <h1>热搜榜</h1>
                         </div>
                         <ul class="list">
-                            <li v-for="(item,index) in searchlist" :key="index">
+                            <!-- " -->
+                            <li v-for="(item,index) in searchlist" :key="index" @click="listclick(item.searchWord)"> 
                                 <h2 :class="index<3? 'red' :'bule'">{{index + 1}}</h2>
                                 <div class="list_details">
                                     <div>
@@ -113,6 +114,9 @@ export default {
         // console.log(res.data.data)
         this.searchlist = res.data.data
       })
+    },
+    listclick (name) {
+      console.log('跳转道音乐搜索页面', name)
     }
   },
   mounted () {
@@ -184,7 +188,6 @@ export default {
     text-indent:10px;
     background: rgba(0,0,0,.4);
     color:#fff
-    
 }
 .search input::-webkit-input-placeholder{
     color: #ca7d7d;
@@ -194,12 +197,10 @@ export default {
     top: 4px;
     right: 8px;
     color: #ca7d7d;
-
 }
 .userOperations{
     color:#e29595 ;
     display: flex;
-    /* margin-left: 364px; */
     padding-top: 12px;
 
 }
@@ -250,6 +251,9 @@ export default {
 .Hot_search_text{
     font-size: 14px;
 }
+.Hot_search_text>h1{
+    text-indent: 20px;
+}
 .list_details>div>h1{
     font-size: 12px;
     color:#333333 ;
@@ -289,7 +293,11 @@ export default {
     height: 14px;
     top: 0px;
     left: 0;
+    cursor: pointer;
     width: 100%;
+}
+.list>li:hover{
+    background: #ededed;
 }
 </style>
 

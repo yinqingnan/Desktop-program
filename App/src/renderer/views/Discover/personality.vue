@@ -205,8 +205,6 @@ export default {
   }
 }
 </script>
-
-
 <style scoped>
 .content{
     width: 764px;
@@ -219,11 +217,9 @@ opacity: 0.75;
 line-height: 200px;
 margin: 0;
 }
-
 .el-carousel__item:nth-child(2n) {
 background-color: #99a9bf;
 }
-
 .el-carousel__item:nth-child(2n+1) {
 background-color: #d3dce6;
 }
@@ -231,9 +227,6 @@ background-color: #d3dce6;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-/* .songsheet{
-    padding: 0 20px;
-} */
 .songsheet>div{
     margin-top: 12px;
     padding-bottom:45px ;
