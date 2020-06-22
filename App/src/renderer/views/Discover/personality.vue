@@ -34,7 +34,7 @@
                 <h1>推荐歌单</h1>
                 <h2>更多 <span class="iconfont icon-next"></span></h2>
             </div>
-            <div style=" padding-bottom: 24px;">
+            <div style=" padding-bottom: 46px;">
                 <ul class="Exclusives">
                     <li v-for="(item,index) in Exclusive.slice(0, 3)" :key="index"  @click="Exclusiveclick(item.id)">
                         <div :style="{'backgroundImage': 'url(' + item.picUrl + ')'}" class="lunbo">
@@ -93,6 +93,22 @@
             </ul>
             </div>
             
+        </div>
+        <div class="MVlist songsheet">
+            <div style="margin-bottom:12px">
+                <h1>推荐MV</h1>
+                <h2>更多 <span class="iconfont icon-next"></span></h2>
+            </div>
+            <ul class="MVul">
+                <li v-for="(item, index) in personalizedMVlist" :key="index" v-show="index<3">
+                    <h2>{{item.copywriter}}</h2>
+                    <div :style="{'backgroundImage': 'url(' + item.picUrl + ')'}" class="lunbo" @click="MVJump(item.id)">
+                        <span><span class="iconfont icon-18"></span>  {{item.playCount}}</span>  
+                    </div>
+                    <p @click="MVJump(item.id)">{{item.artistName}}</p>
+                    <p @click="singer(item.artistId)">{{item.name}}</p>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -173,10 +189,18 @@ export default {
     },
     uptodatemusicbtn (id) {
       console.log(id)
-      console.log('点击播放音乐', id)
+      // console.log('点击播放音乐', id)
+      this.$store.state.Counter.musicID = id
+    //   console.log(this.$store.state.Counter.musicID)
     },
     dbuptodatemusic () {
       console.log('双击效果')
+    },
+    MVJump (id) {
+      console.log('根据MVID去播放MV' + id)
+    },
+    singer (id) {
+      console.log('根据歌手ID去查信息' + id) //
     }
   }
 }
@@ -211,6 +235,8 @@ background-color: #d3dce6;
     padding: 0 20px;
 } */
 .songsheet>div{
+    margin-top: 12px;
+    padding-bottom:45px ;
     display: flex;
     justify-content: space-between; 
     padding-bottom: 10px;
@@ -236,8 +262,8 @@ background-color: #d3dce6;
     margin-bottom: 6px;
 }
 .recommend>p{
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 12px;
+    line-height: 18px;
     height: 34px;
 }
 .recommend>div>h1{
@@ -278,7 +304,8 @@ background-color: #d3dce6;
     width: 100%;
 }
 .Exclusives>li>p{
-    font-size: 10px;
+    font-size: 12px;
+    line-height: 14px;
     margin-top: 4px;
 }
 .Exclusives>li>div>div{
@@ -359,5 +386,55 @@ background-color: #d3dce6;
 }
 .uptodatemusic{
     margin-bottom: 20px;
+}
+.MVul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.MVul>li{
+    width: 32%;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.MVul>li>div{
+    height:150px;
+    position: relative;
+}
+.MVul>li>h2{
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+    top: -36px;
+    height: 36px;
+    line-height: 36px;
+    background:rgba(0,0,0,.4);
+    width: 100%;
+    color: #fff;
+    overflow: hidden;
+    text-indent: 12px;
+}
+.MVul>li:hover h2{
+    transition: all 0.5s;
+    top: 0;
+}
+.MVul>li>p{
+    line-height: 12px;
+    font-size: 12px;
+    margin-top: 8px;
+}
+.MVul>li>div>span{
+    position: absolute;
+    top: 12px;
+    right: 7px;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+}
+.MVul>li>div>span>span{
+    font-size: 12px;
 }
 </style>

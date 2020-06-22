@@ -1,5 +1,9 @@
 <template>
-    <div class="box">
+    <div class="box" >
+        <!--style="-webkit-app-region:drag"    //让窗体可以进行拖动  -->
+        <div class="drags" style="-webkit-app-region:drag">
+
+        </div>
         <div>
             <div class="logo">
                 <img src="../../assets/imgs/logo.png" alt="">
@@ -279,6 +283,13 @@ export default {
     font-size: 11px;
     line-height: 1;
     margin-top: 3px;
+}
+.drags{
+    position: fixed;
+    height: 14px;
+    top: 0px;
+    left: 0;
+    width: 100%;
 }
 </style>
 

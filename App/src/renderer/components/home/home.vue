@@ -9,7 +9,7 @@
           <el-container class="content">
             <el-aside width="205px">
               <Left style="height:86%"></Left>
-              <div class="Playoperation">
+              <!-- <div class="Playoperation">
                   <div>
                     <img src="../../assets/touxiang.png" alt="">
                   </div>
@@ -23,7 +23,7 @@
                       <p><span class="iconfont icon-zhuanfa"></span></p>
                     </div>
                   </div>
-              </div>
+              </div> -->
             </el-aside>
             
             <el-main>
@@ -52,12 +52,13 @@ export default {
     return {
       user_msg: {},
       music: {
-        title: '游园会',
-        author: '周杰伦',
-        pic: '',
-        url: 'http://m801.music.126.net/20200621223040/239c553a5aa22815c75c6deec51d3c84/jdymusic/obj/w5zDlMODwrDDiGjCn8Ky/2041626782/eaf0/d6fe/b76a/9f2e4df64d86fa5d797fd38152cb4dcb.mp3',
+        title: '光辉岁月', // 歌名
+        author: '谢波', // 作者
+        pic: '', // 海报
+        url: 'http://m7.music.126.net/20200622101033/218826df1f6a34f51e1559f76151a0e3/ymusic/560b/525b/065a/aa95d15723e10e652b6410ab1c473a09.mp3', // url
         lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
-      }
+      },
+      MusicID: ''
     }
   },
   methods: {
@@ -65,13 +66,30 @@ export default {
       this.$router.push({ path: '/login' })
     },
     btn1 () {
-      // console.log(123)
       // this.$electron.ipcRenderer.send('close')
     }
   },
   mounted () {
     this.user_msg = this.$route.query
   }
+  // computed: {
+  //   getStoreItem () {
+  //     return this.$store.state.Counter.musicID
+  //   }
+  // },
+  // watch: {
+  //   getStoreItem (newval, oldval) {
+  //     // console.log(newval) // 数据变更后进行数据请求
+  //     this.$axios.get('/song/url?id=' + newval).then((res) => {
+  //       this.music.url = res.data.data[0].url
+  //       console.log(this.music.url)
+  //     })
+  //     this.$axios.get('/song/detail?ids=346576').then((res) => {
+  //       console.log(res.data)
+  //     })
+  //   },
+  //   deep: true
+  // }
 
 }
 </script>
